@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Sometype+Mono:wght@400;700&display=swap');
+
+:root{
+    --bg-color: #010B13;
+    --text-color: #fffffe;
+    --text-titles-color: #8AB9F1;
+    --text-subtitles-color: #6082B6;
+    --default-border: 1px dotted #6082B6;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--bg-color);
+    font-family: 'Sometype Mono', monospace;
+    scrollbar-color: pink green;
+    color: var(--text-color);
+}
+
+.github-button{
+    display: inline-flex;
+    text-decoration: none;
+    color: var(--text-titles-color);
+    border: 1px solid var(--text-titles-color);
+    padding: 8px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+.github-button::before{  
+    font: var(--fa-font-brands);
+    content: "\f09b";
+    vertical-align: middle;
+    font-weight: 900;
+    margin-right: 5px;
+    font-size: 1.25rem;
+}
+
+h1{
+    font-size: 60px;
+    color: var(--text-titles-color);
+    text-align: center;
+}
+h2{
+    font-size: 40px;
+    color: var(--text-subtitles-color);
+}
+
+.header{
+    height: 100vh;
+}
+
+.menu{
+    height: 70px;
+    padding: 0 16px;
+    border-bottom: var(--default-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+.menu li a{
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 15px;
+    margin-right: 16px;
+    color: var(--text-titles-color);
+}
+
+.header-content{
+    display: flex;
+    height: calc(100vh - 70px);
+}
+.header-content .left{
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header-content .right{
+    padding: 0 16px;
+}
+.header-content .right svg{
+    height: 600px;
+    width: 600px;
+}
+
+.section{
+    padding: 1rem 1rem 2rem 1rem;
+    border-top: var(--default-border);
+}
+
+#about-me{  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#about-me p{
+    width: 500px;
+    text-align: center;
+}
+
+.projects-container{
+    display: grid;
+    grid-template-areas: 
+    "project image-view"
+    "image-view project"
+    "project image-view";
+    grid-template-columns: repeat(2, 1fr);
+}
+.projects-container .project-imageview{
+    
+}
+.projects-container .project{
+    padding: 2rem;
+
+}
+.project .project-name{
+    color: var(--text-titles-color);
+    font-size: 1.25rem;
+}
+.project .project-description{
+    font-size: 0.875rem;
+}
+.project .tecnologies-container span{
+    font-size: 0.925rem;
+    color: var(--text-subtitles-color);
+}
+.project .tecnologies-container .tecnologies-icons{
+    display: flex;
+    flex-wrap: wrap;
+}
+.project .tecnologies-container .tecnologies-icons .icon{
+    width: 60px;
+    height: 60px;
+    margin-right: 16px;
+    margin-top: 8px;
+}
+.project .view-options a{
+    display: inline-block;
+    text-decoration: none;
+    color: var(--text-titles-color);
+    border: 1px solid var(--text-titles-color);
+    padding: 8px;
+    margin: 8px 0;
+}
+
+#contacts .contact-mail{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    font-size: 4rem;
+    height: 400px;
+}
+
+/* ---------- estilizando o scrollbar ---------- */
+*{
+    scrollbar-width: thin;
+    scrollbar-color: rgba(96, 130, 182, .5) var(--bg-color);
+}
+*::-webkit-scrollbar {
+    width: 8px;
+}
+  
+*::-webkit-scrollbar-track {
+    background-color: var(--bg-color);
+}
+  
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(96, 130, 182, .5);
+    border-radius: 20px;
+}
+
+/* estilizando o svg */
+.svg-line{
+
+}
+.svg-fill{
+    fill: var(--text-subtitles-color);
+}
