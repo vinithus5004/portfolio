@@ -31,7 +31,6 @@
 body{
     background-color: var(--bg-color);
     font-family: 'Sometype Mono', monospace;
-    scrollbar-color: pink green;
     color: var(--text-color);
 }
 
@@ -51,16 +50,6 @@ body{
     font-weight: 900;
     margin-right: 5px;
     font-size: 1.25rem;
-}
-
-h1{
-    font-size: 60px;
-    color: var(--text-titles-color);
-    text-align: center;
-}
-h2{
-    font-size: 40px;
-    color: var(--text-subtitles-color);
 }
 
 .header{
@@ -104,6 +93,12 @@ h2{
     justify-content: center;
     align-items: center;
 }
+.header-content .left h1{
+    
+}
+.header-content .left h2{
+    
+}
 .header-content .right{
     width: 50%;
     padding: 8px;
@@ -121,6 +116,12 @@ h2{
     padding: 1rem 1rem 2rem 1rem;
     border-top: var(--default-border);
 }
+.section .section-title{
+    color: var(--text-titles-color);
+    font-size: clamp(2.25rem, 8vw, 3.75rem);
+    line-height: 1.8em;
+    text-align: center;
+}
 
 #about-me{  
     display: flex;
@@ -134,28 +135,29 @@ h2{
 
 .projects-container{
     display: grid;
+    justify-items: center;
     grid-template-areas: 
     "project ."
     ". project"
     "project .";
     grid-template-columns: repeat(2, 1fr);
 }
-.projects-container .project-imageview{
-    
-}
 .projects-container .project{
     padding: 2rem;
-
 }
 .project .project-name{
     color: var(--text-titles-color);
     font-size: 1.25rem;
+    line-height: 1.5em;
 }
 .project .project-description{
     font-size: 0.875rem;
+    line-height: 1.375em;
+    max-width: 1000px;
 }
 .project .tecnologies-container span{
     font-size: 0.925rem;
+    line-height: 1.8em;
     color: var(--text-subtitles-color);
 }
 .project .tecnologies-container .tecnologies-icons{
@@ -181,9 +183,17 @@ h2{
     text-align: center;
     display: flex;
     justify-content: center;
-    align-items:center;
-    font-size: 4rem;
-    height: 400px;
+    align-items: center;
+    margin-top: 1rem;
+    font-size: clamp(1.875rem, 5vw, 3.75rem);
+}
+
+/* ---------- footer ---------- */
+.footer .copyright{
+    padding: 1rem;
+    font-size: 0.875rem;
+    text-align: center;
+    color: #C0C0C0;
 }
 
 /* ---------- estilizando o scrollbar ---------- */
@@ -210,9 +220,15 @@ h2{
 }
 
 /* ---------- Responsivity ---------- */
+@media(max-width: 1024px){
+    .projects-container .project{
+        padding: 1.5rem;
+    }
+}
+
 @media (max-width: 840px){
-    #contacts .contact-mail{
-        font-size: 3.25rem;
+    .header-content .right svg{
+        display: none;
     }
 }
 
@@ -225,13 +241,19 @@ h2{
     }
 }
 
+@media (max-width: 520px){
+    #about-me p{
+        width: 100%;
+        text-align: left;
+    }
+    .projects-container .project{
+        padding: 1rem;
+    }
+}
+
 @media (max-width: 680px){
     .header-content{
         display: block;
-    }
-    #contacts .contact-mail{
-        font-size: 2.875rem;
-        word-break: break-all;
     }
     .header-content .right{
         width: 100%;
@@ -239,5 +261,20 @@ h2{
     .header-content .right svg{
         width: 400px;
         height: 400px;
+    }
+}
+
+@media (max-width: 425px){
+    .projects-container .project{
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 400px){
+    #contacts .contact-mail{
+        font-size: 24px;
+    }
+    #contacts .section-title{
+        line-height: 1em;
     }
 }
