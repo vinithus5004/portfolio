@@ -14,6 +14,20 @@
     padding: 0;
 }
 
+.go-top-button{
+    background-color: #007FFF;
+    color: var(--text-color);
+    padding: 8px 12px;
+    font-size: 1.25rem;
+    border-radius: 4px;
+
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    display: none;
+}
+
 body{
     background-color: var(--bg-color);
     font-family: 'Sometype Mono', monospace;
@@ -53,7 +67,7 @@ h2{
     height: 100vh;
 }
 
-.menu{
+.navigation{
     height: 70px;
     padding: 0 16px;
     border-bottom: var(--default-border);
@@ -61,7 +75,7 @@ h2{
     justify-content: space-between;
     align-items: center;
 }
-.menu ul{
+.navigation .menu{
     list-style: none;
     padding: 0;
     display: flex;
@@ -69,7 +83,7 @@ h2{
     align-items: center;
     flex: 1;
 }
-.menu li a{
+.navigation li a{
     text-decoration: none;
     font-size: 2rem;
     padding: 15px;
@@ -82,6 +96,7 @@ h2{
     height: calc(100vh - 70px);
 }
 .header-content .left{
+    padding: 8px;
     text-align: center;
     flex: 1;
     display: flex;
@@ -90,11 +105,16 @@ h2{
     align-items: center;
 }
 .header-content .right{
-    padding: 0 16px;
+    width: 50%;
+    padding: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .header-content .right svg{
-    height: 600px;
     width: 600px;
+    height: 600px;
 }
 
 .section{
@@ -115,9 +135,9 @@ h2{
 .projects-container{
     display: grid;
     grid-template-areas: 
-    "project image-view"
-    "image-view project"
-    "project image-view";
+    "project ."
+    ". project"
+    "project .";
     grid-template-columns: repeat(2, 1fr);
 }
 .projects-container .project-imageview{
@@ -185,9 +205,39 @@ h2{
 }
 
 /* estilizando o svg */
-.svg-line{
-
-}
 .svg-fill{
     fill: var(--text-subtitles-color);
+}
+
+/* ---------- Responsivity ---------- */
+@media (max-width: 840px){
+    #contacts .contact-mail{
+        font-size: 3.25rem;
+    }
+}
+
+@media (max-width: 790px){
+    .projects-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .navigation .menu{
+        display: none;
+    }
+}
+
+@media (max-width: 680px){
+    .header-content{
+        display: block;
+    }
+    #contacts .contact-mail{
+        font-size: 2.875rem;
+        word-break: break-all;
+    }
+    .header-content .right{
+        width: 100%;
+    }
+    .header-content .right svg{
+        width: 400px;
+        height: 400px;
+    }
 }
