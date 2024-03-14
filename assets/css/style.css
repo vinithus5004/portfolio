@@ -118,7 +118,7 @@ body{
 }
 .header .hero-banner .left .me{
     line-height: 0.75em;
-    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    font-size: clamp(1.875rem, 5vw, 3.75rem);
 }
 .header .hero-banner .left .me .name{
     color: var(--text-titles-color);
@@ -216,7 +216,7 @@ body{
 #contacts .contact-mail{
     display: inline-block;
     margin-top: 1rem;
-    font-size: clamp(1.875rem, 5vw, 3.25rem);
+    font-size: min(5vw, 2.875rem);
 }
 #contacts .contact-mail::before{
     color: var(--text-subtitles-color);
@@ -318,7 +318,6 @@ body{
 @media (max-width: 520px){
     #about-me p{
         width: 100%;
-        text-align: left;
     }
     .projects-container .project{
         padding-left: 1rem;
@@ -330,16 +329,5 @@ body{
     .projects-container .project{
         padding-left: 0.5rem;
         padding-right: 0.5rem;
-    }
-}
-
-@media (max-width: 400px){
-    #contacts .contact-mail{
-        font-size: 24px;
-    }
-}
-@media (max-width: 350px){
-    #contacts .contact-mail{
-        font-size: 20px;
     }
 }
